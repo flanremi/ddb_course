@@ -12,7 +12,7 @@ backend/src/main/resources/application.yml
 
 ## 运行
 
-1. 方法1
+### 1. 方法1
 
    用idea等IDE打开，待maven安装好依赖，
 
@@ -20,7 +20,7 @@ backend/src/main/resources/application.yml
 
    backend/src/main/java/com/ddbs/DDBSPreApplication.java
 
-2. 方法2
+### 2. 方法2
 
    在目录 backend/ 下，
 
