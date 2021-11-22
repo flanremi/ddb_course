@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ddbs.mapper.UserMapper">
+
+	<sql id="UserProps">
+		uid,
+		name,
+		warehouse,
+		wage,
+		password,
+		username,
+		level
+	</sql>
+
+
+	<select id="getStaffById" resultType="Staff">
+		select
+		<include refid="UserProps" />
+		from STAFF
+		where uid = #{uid}
+	</select>
+
+    <select id="getStaffByToken" resultType="Staff">
+		select
+		<include refid="UserProps" />
+		from STAFF
+		where username = #{username} and password = #{password}
+	</select>
+
+	<select id="getUidsBelowLevel"  parameterType="Integer" resultType="Integer">
+		select uid from STAFF where level &lt; #{level}
+	</select>
+
+
+</mapper>
