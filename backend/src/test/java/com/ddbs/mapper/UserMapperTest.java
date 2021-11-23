@@ -23,7 +23,7 @@ public class UserMapperTest {
         Staff staff0 = usrMapper.getStaffById(1);
         System.out.println(staff0.getName());
 
-        Staff staff = usrMapper.getStaffByToken("A", "A");
+        Staff staff = usrMapper.getStaffByToken("FAA", "F123");
         System.out.println(staff.getName());
 
         List<Integer> lst = usrMapper.getUidsBelowLevel(5);

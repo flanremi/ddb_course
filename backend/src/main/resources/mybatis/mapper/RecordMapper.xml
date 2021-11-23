@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ddbs.mapper.RecordMapper">
+
+    <select id="getRecordListByUidAndDesc" resultType="Record">
+		select * from RECORD
+		where uid = #{uid}
+		and descp like CONCAT('%',#{desc, jdbcType=VARCHAR} ,'%')
+	</select>
+
+	<insert id="insertOneRecord" parameterType="HashMap">
+		INSERT INTO RECORD(type, uid, date, descp, warehouse)
+		VALUES(#{type}, #{uid}, #{date}, #{desc}, #{warehouse})
+	</insert>
+
+</mapper>

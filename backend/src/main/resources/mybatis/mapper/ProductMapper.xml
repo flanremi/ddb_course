@@ -17,10 +17,24 @@
 		<include refid="ProductProps" />
 		from PRODUCT where warehouse = #{warehouse}
 	</select>
+
 	<select id="getAllProducts"  resultType="Product">
 		select
 		<include refid="ProductProps" />
 		from PRODUCT
 	</select>
+
+	<select id="getProductByWarehouseAndCode"  resultType="Product">
+		select
+		<include refid="ProductProps" />
+		from PRODUCT
+		where warehouse = #{warehouse} and code = #{code}
+	</select>
+
+	<update id="popOutProduct">
+		UPDATE PRODUCT
+		SET num = num - #{num}
+		WHERE pid = #{pid}
+	</update>
 
 </mapper>
