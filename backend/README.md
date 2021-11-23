@@ -1,3 +1,7 @@
+## 测试
+
+所有mapper经过单元测试
+controller只有pop_product经过测试
 
 
 ## 配置数据库ip
