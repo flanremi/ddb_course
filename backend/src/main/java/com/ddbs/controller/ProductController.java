@@ -3,6 +3,7 @@ package com.ddbs.controller;
 import com.ddbs.mapper.ProductMapper;
 import com.ddbs.mapper.UserMapper;
 import com.ddbs.pojo.DO.Product;
+import com.ddbs.pojo.DO.Staff;
 import com.ddbs.service.interfaces.RecordService;
 import com.ddbs.util.CompanyStaff;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,13 @@ public class ProductController {
     RecordService recordService;
 
     @GetMapping("/get_warehouse")
-    public ResponseEntity<List<Product>> checkWarehouse(@RequestParam("uid") Integer warehouse){
+    public ResponseEntity<List<Product>> checkWarehouse(@RequestParam("uid") Integer uid){
 
-        if(new CompanyStaff().testCompanyStaff(warehouse)){
+        Staff stf = userMapper.getStaffById(uid);
+        if(new CompanyStaff().testCompanyStaff(stf.getWarehouse())){
             return new ResponseEntity<List<Product> >(productMapper.getAllProducts(), HttpStatus.OK);
         }else {
-            return new ResponseEntity<List<Product> >(productMapper.getProductByWarehouse(warehouse), HttpStatus.OK);
+            return new ResponseEntity<List<Product> >(productMapper.getProductByWarehouse(stf.getWarehouse()), HttpStatus.OK);
         }
     }
 
