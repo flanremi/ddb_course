@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserMapper {
     Staff getStaffById(Integer uid);
     Staff getStaffByToken(@Param("username") String username, @Param("password") String password);
-    List<Integer> getUidsBelowLevel(Integer level);
+    List<Staff> getStaffsBelowLevel(Integer level);
 }

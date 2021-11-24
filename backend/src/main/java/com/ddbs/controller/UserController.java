@@ -24,9 +24,9 @@ public class UserController {
     }
 
     @GetMapping("/staff_manager")
-    public ResponseEntity<List<Integer>> manageStaff(@RequestParam("uid") Integer id){
+    public ResponseEntity<List<Staff>> manageStaff(@RequestParam("uid") Integer id){
         int level = userMapper.getStaffById(id).getLevel();
-        return new ResponseEntity<>(userMapper.getUidsBelowLevel(level), HttpStatus.OK);
+        return new ResponseEntity<>(userMapper.getStaffsBelowLevel(level), HttpStatus.OK);
     }
 
 }

@@ -27,8 +27,10 @@
 		where username = #{username} and password = #{password}
 	</select>
 
-	<select id="getUidsBelowLevel"  parameterType="Integer" resultType="Integer">
-		select uid from STAFF where level &lt; #{level}
+	<select id="getStaffsBelowLevel"  parameterType="Integer" resultType="Staff">
+		select
+		<include refid="UserProps" />
+		from STAFF where level &lt; #{level}
 	</select>
 
 

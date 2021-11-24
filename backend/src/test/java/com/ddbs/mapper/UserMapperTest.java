@@ -26,8 +26,8 @@ public class UserMapperTest {
         Staff staff = usrMapper.getStaffByToken("FAA", "F123");
         System.out.println(staff.getName());
 
-        List<Integer> lst = usrMapper.getUidsBelowLevel(5);
-        lst.forEach(System.out::println);
+        List<Staff> lst = usrMapper.getStaffsBelowLevel(5);
+        lst.forEach(e-> System.out.println(e.getName()));
 
     }
 }

@@ -50,7 +50,7 @@ public class ProductController {
                 // 出库
                 productMapper.popOutProduct(p.getPid(), num);
                 // 记录
-                recordService.saveOneRecord(uid,"出库", 2);
+                recordService.saveOneRecord(uid,"出库:"+p.getName(), 2);
                 return new ResponseEntity<>(true, HttpStatus.OK);
             }
         }else{
