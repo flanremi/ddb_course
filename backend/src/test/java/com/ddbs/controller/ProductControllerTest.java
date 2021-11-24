@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -38,7 +38,7 @@ public class ProductControllerTest {
 
     @Test
     public void testPopOut() throws Exception{
-        this.mockMvc.perform(put("/pop_product?uid=1&warehouse=10001&code=123456&num=1"))
+        this.mockMvc.perform(get("/pop_product?uid=1&warehouse=10001&code=123456&num=1"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andReturn();

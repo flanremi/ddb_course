@@ -32,7 +32,7 @@ public class ProductController {
     }
 
 
-    @PutMapping("/pop_product")
+    @GetMapping("/pop_product")
     public ResponseEntity<Boolean> popOutProduct(@RequestParam("uid") Integer uid,
                                                   @RequestParam("warehouse") Integer warehouse,
                                                   @RequestParam("code") Integer code,
