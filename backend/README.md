@@ -4,7 +4,6 @@
 
 controller只有pop_product经过测试
 
-Record.date又改了类型，而数据库ip没有暴露，还没有测试
 
 ## 配置数据库ip
 
