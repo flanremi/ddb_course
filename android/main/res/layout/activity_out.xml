@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="填写出库商品条码"
+        android:layout_marginTop="70dp"
+        android:padding="20dp"
+        android:id="@+id/et_out"
+        android:textSize="12sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="填写出库数量"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/et_out"
+        android:padding="20dp"
+        android:id="@+id/et_num"
+        android:textSize="12sp"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_num"
+        android:id="@+id/btn_submit"
+        android:text="提交出库"
+        android:textSize="10sp"
+        android:layout_margin="30dp"
+        />
+</RelativeLayout>
